@@ -1,0 +1,37 @@
+$backgroundcolor: #181818;
+$color: #F2F2F2;
+$second-color: #743efa;
+$three-color: #5CB8E4;
+
+footer {
+  height: -webkit-fill-available;
+  background-color: #121212;
+  .left-f {
+    height: -webkit-fill-available;
+    margin: 20px;
+    margin-top: 0;
+    h1 {
+      background: rgb(135,88,255);
+      background: linear-gradient(0deg, rgba(135,88,255,1) 0%, rgba(92,184,228,1) 59%);
+      -webkit-background-clip: text;
+      color: rgba($color, $alpha: 0.2);
+      font-size: 28px;
+    }
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .right-f {
+    height: -webkit-fill-available;
+    .icons {
+      a {
+        text-decoration: none;
+        color: white;
+        font-size: 60px;
+        margin: 5px;
+      }
+    }
+  }
+
+}

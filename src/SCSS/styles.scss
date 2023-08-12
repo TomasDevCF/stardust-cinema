@@ -1,0 +1,174 @@
+$backgroundcolor: #181818;
+$color: #F2F2F2;
+$second-color: #6932f6;
+$three-color: #5CB8E4;
+
+@use "mylist";
+@use "header";
+@use "app";
+@use "footer";
+@use "moviec";
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200;300&family=Noto+Sans:wght@300;400;500&display=swap');
+
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+body{
+  background-color: #181818;
+  color: $color;
+  height: 100%;
+  > * {
+    height: 100%;
+  }
+  font-family: "Noto Sans";
+}
+
+
+.link-category {
+  font-size: 30px;
+  width: 90%;
+  display: block;
+  border-radius: 5px;
+}
+
+
+
+.page-item {
+  a {
+    color: black;
+  }
+}
+
+.mt {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.movies {
+  width: 100%;
+  .moviet {
+    img {
+      height: 248px;
+    }
+  }
+
+  .movie {
+    transition: scale .1s ease-in-out;
+    
+    position: relative;
+    cursor: pointer;
+    .of {
+      
+      position: relative;
+      
+    }
+    &:hover {
+      scale: 1.1;
+      z-index: 10;
+    }
+
+    &:hover .in-image-m .other {
+        top: 0;
+    }
+    &:hover .in-image-m .heart i {
+      bottom: 0;
+    }
+    .left-7 {
+      left: 7% !important;
+      width: 86% !important;
+    }
+    
+
+    .in-image-m {
+      position: absolute;
+      color: black;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      
+      .heart {
+        margin-left: auto;
+        margin-right: 10px;
+        margin-top: 10px;
+        .fa-solid {
+          color: red;
+        }
+        i {
+          border-radius: 200px;
+          width: 34px;
+          height: 34px;
+          font-size: 25px;
+          background-color: rgba($color, $alpha: .7);
+          padding: 0;
+          transition: color, bottom .4s ease-in-out;
+          position: relative;
+          bottom: 140%;
+          cursor: default;
+          &:hover {
+
+            color: rgb(173, 36, 36);
+          }
+        }
+      }
+
+      .other {
+        margin-top: auto;
+        color: white;
+        position: relative;
+        top: 100%;
+        transition: top .4s ease-in-out;
+
+        p {
+          margin: 0;
+          font-size: 17px;
+          &:last-child {
+            margin-bottom: 10px;
+            font-size: 18px;
+          }
+        }
+        background-color: rgba($backgroundcolor, $alpha: .8);
+      }
+    }
+    .votes {
+      position: absolute;
+      z-index: 4;
+      right: -1px;
+      border: 1px solid black;
+      background-color: rgb(3, 215, 3);
+      color: black;
+      width: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 35px;
+      top: 93%;
+      border-radius: 200px;
+      p {
+        margin: 0;
+      }
+    }
+    .red {
+      background-color: red !important;
+    }
+    .orange {
+      background-color: rgb(255, 128, 0) !important;
+    }
+    
+  }
+}
+
+main {
+  padding-top: 70px;
+}
+
+.btn {
+  outline: none;
+  color: $color
+}

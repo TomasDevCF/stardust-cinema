@@ -1,0 +1,37 @@
+$backgroundcolor: #181818;
+$color: #F2F2F2;
+$second-color: #743efa;
+$three-color: #5CB8E4;
+
+.list-main {
+  padding-top: 70px;
+  text-align: center;
+  width: 100% !important;
+
+  .playing {
+    margin-top: 50px;
+
+   
+
+    
+
+    .mt-list {
+      text-decoration: none;
+      margin-right: 20px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .title-playing {
+      > h4 {
+        padding-left: 110px;
+      }
+
+      
+      display: flex;
+      margin: auto;
+      width: 100%;
+    }
+  }
+}

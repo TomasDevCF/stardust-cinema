@@ -1,0 +1,123 @@
+$backgroundcolor: #181818;
+$color: #F2F2F2;
+$second-color: #743efa;
+$three-color: #5CB8E4;
+
+
+.sp {
+  font-size: 13px;
+}
+
+header {
+  position: fixed;
+  z-index: 20;
+  
+  .section-1 {
+    > a {
+      background: rgb(135,88,255);
+      background: linear-gradient(0deg, rgba(135,88,255,1) 0%, rgba(92,184,228,1) 59%);
+      -webkit-background-clip: text;
+      color: rgba($color, $alpha: 0.2);
+      font-size: 30px;
+      &:hover {
+        color: rgba($color, $alpha: 0.2);
+      }
+    }
+  }
+
+  .language {
+    position: relative;
+
+  
+
+    .category-s {
+      top: 45px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 30px;
+      left: 12px;
+      .btn-link {
+        color: $backgroundcolor;
+      }
+    }
+
+  }
+
+  .category-s {
+    height: max-content;
+    color: $backgroundcolor !important;
+    background-color: $color;
+    word-wrap: break-word;
+    position: absolute;
+    z-index: 20;
+  }
+
+  .--disable {
+    display: none !important;
+  }
+
+  height: 70px;
+  backdrop-filter: blur(20px);
+  background-color: rgba($backgroundcolor, $alpha: 0.3);
+  .section-2 {
+    span {
+      background-color: #F2F2F2;
+      padding: .35rem;
+      border-radius: 5px;
+      i {
+        color: rgb(113, 113, 113);
+      }
+      input {
+        outline: none;
+        background-color: transparent;
+        width: 300px;
+        padding-left: 5px;
+      }
+    }
+
+    > :last-child {
+      display: none;
+    }
+  }
+
+  .btn-link {
+    transition: .1s ease-in-out color;
+    text-decoration: none;
+    &:hover {
+      color: $second-color !important;
+    }
+
+    &:active {
+      color: $second-color !important;
+    }
+  }
+
+  a {
+    color: $color;
+    transition: .1s ease-in-out color;
+    text-decoration: none;
+    &:hover {
+      color: #8758FF !important;
+    }
+  }
+
+  .section-3 {
+    font-family: "Kanit";
+    position: relative;
+
+    .--disable {
+      display: none;
+    }
+
+    .category-s {
+      height: 300px;
+      width: 100%;
+      
+      a {
+        color: $backgroundcolor;
+      }
+    }
+  
+  }
+}
