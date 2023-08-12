@@ -1,8 +1,8 @@
 //React
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import { ContextProvider } from './Context.jsx';
+import { BrowserRouter as Router, Route, Routes, Navigate, HashRouter } from "react-router-dom";
+
 //Components
 import App from './App.jsx'
 import Header from "./Components/Header.jsx";
@@ -19,11 +19,10 @@ import { ToastContainer } from "react-toastify";
 //Codigo
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-    <ContextProvider >
+    <HashRouter >
       <Router>
         <Header/>
         <ToastContainer
-        style={{top: "70px"}}
         position="top-right"
         autoClose={2000}
         hideProgressBar={false}
@@ -48,7 +47,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Routes>
         
       </Router>
-    </ContextProvider>
+    </HashRouter>
     <Footer/>
   </>
 )
