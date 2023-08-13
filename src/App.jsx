@@ -183,7 +183,7 @@ function App() {
                   type="search"
                   name="search-movie"
                   id="search-movie"
-                  placeholder="Busca películas..."
+                  placeholder="Buscá películas..."
                 />
               </span>
             </div>

@@ -20,7 +20,7 @@ export default function Header() {
 
   function search(e) {
     if (e.key === "Enter" && e.target.value.trim().length !== 0) {
-      navigate(`/search/${e.target.value.trim()}`,);
+      navigate(`/search/${e.target.value.trim()}`);
       e.target.value = "";
     }
   }
@@ -54,7 +54,7 @@ export default function Header() {
             type="search"
             name="search-movie"
             id="search-movie"
-            placeholder="Busca películas..."
+            placeholder="Buscá películas..."
           />
         </span>
 
@@ -73,7 +73,7 @@ export default function Header() {
             type="search"
             name="search-movie"
             id="search-movie"
-            placeholder="Busca películas..."
+            placeholder="Buscá películas..."
           />
         </span>
       </div>
@@ -105,7 +105,14 @@ export default function Header() {
           ) : (
             categories.genres.map((c) => {
               return (
-                <Link key={c.id} className="col-6 sp" to={`/category/${c.id}`}>
+                <Link
+                  key={c.id}
+                  className="col-6 sp"
+                  onClick={() => {
+                    setActiveCategory(false);
+                  }}
+                  to={`/category/${c.id}`}
+                >
                   {c.name}
                 </Link>
               );
