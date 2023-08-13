@@ -20,7 +20,7 @@ import { ToastContainer } from "react-toastify";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
     <HashRouter >
-      <Router>
+      
         <Header/>
         <ToastContainer
         position="top-right"
@@ -44,9 +44,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path='/movies/:type' element={<MoviesType/>} />
             <Route path='/favorites' element={<Favorites/>} />
             <Route path='/search/:query?' element={<Search/>} />
+            <Route path='*' element={<Navigate to={"/"}/>}/>
         </Routes>
         
-      </Router>
+      
     </HashRouter>
     <Footer/>
   </>

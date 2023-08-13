@@ -9,5 +9,5 @@ export default defineConfig({
   server: {
     host: true
   },
-  base: "/stardust-cinema/"
+  base: "https://tomasdevcf.github.io/stardust-cinema/"
 })
