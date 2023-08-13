@@ -20,7 +20,7 @@ export default function Header() {
 
   function search(e) {
     if (e.key === "Enter" && e.target.value.trim().length !== 0) {
-      navigate(`/search/${e.target.value.trim()}`);
+      navigate(`/search/${e.target.value.trim()}`,);
       e.target.value = "";
     }
   }
@@ -36,16 +36,14 @@ export default function Header() {
 
   return (
     <header
-      className={`w-100 max-header d-flex ${
-        activeSearch ? "justify-content-center" : "justify-content-between"
-      } align-items-center px-3`}
+      className={`w-100 max-header d-flex justify-content-between align-items-center px-3`}
     >
-      <div className={`section-1 d-flex ${activeSearch ? "d-none" : ""}`}>
+      <div className={`section-1 d-flex ${activeSearch ? "vs-hi" : ""}`}>
         <Link to={"/"}>
           Stardust<span> Cinema</span>
         </Link>
       </div>
-      <div className="section-2">
+      <div className="section-2 ">
         <span>
           <i className="fa-solid fa-magnifying-glass"></i>
           <input
@@ -79,7 +77,7 @@ export default function Header() {
           />
         </span>
       </div>
-      <div className={`section-3 ${activeSearch ? "d-none" : ""}`}>
+      <div className={`section-3 ${activeSearch ? "vs-hi" : ""}`}>
         {/*Todo Link*/}
         <Link to={"/favorites"} className="category btn btn-link">
           Favoritos

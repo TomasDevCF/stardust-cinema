@@ -18,7 +18,8 @@ export default function Category() {
   const [maxPage, setMaxPage] = useState(100);
   const [category, setCategory] = useState(null);
 
-  function changePage(typpe, num) {
+  function changePage(e, typpe, num) {
+    e.preventDefault();
     if (typpe === "sum") {
       if (!(page + num > maxPage)) {
         setPage(page + num);
@@ -82,8 +83,8 @@ export default function Category() {
           <ul className="pagination justify-content-end me-5">
             <li className={`page-item ${page === 1 ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("res", 1);
+                onClick={(e) => {
+                  changePage(e, "res", 1);
                 }}
                 className="page-link"
                 href="#"
@@ -94,8 +95,8 @@ export default function Category() {
 
             <li className={`page-item ${page + 1 > maxPage ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("sum", 1);
+                onClick={(e) => {
+                  changePage(e, "sum", 1);
                 }}
                 className="page-link"
                 href="#"
@@ -106,8 +107,8 @@ export default function Category() {
 
             <li className={`page-item ${page + 2 > maxPage ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("sum", 2);
+                onClick={(e) => {
+                  changePage(e, "sum", 2);
                 }}
                 className="page-link"
                 href="#"
@@ -118,8 +119,8 @@ export default function Category() {
 
             <li className={`page-item ${page + 3 > maxPage ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("sum", 3);
+                onClick={(e) => {
+                  changePage(e, "sum", 3);
                 }}
                 className="page-link"
                 href="#"
@@ -130,8 +131,8 @@ export default function Category() {
 
             <li className={`page-item ${page + 1 > maxPage ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("sum", 1);
+                onClick={(e) => {
+                  changePage(e, "sum", 1);
                 }}
                 className="page-link"
                 href="#"

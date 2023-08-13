@@ -117,6 +117,11 @@ $three-color: #5CB8E4;
   height: 100%;
 }
 
+.vs-hi {
+  visibility: hidden;
+  width: 1px;
+}
+
 @media (max-width: 941px) {
   .section-2 {
     input {
@@ -126,23 +131,24 @@ $three-color: #5CB8E4;
   
 }
 
-@media (max-width: 767px) {
-  #root {
-    header {
-      
-      justify-content: space-between !important;
-
-      .section-1 {
-        display: block !important;
-      } 
-      .section-3 {
-        display: block !important;
-      } 
-    }
+@media (min-width: 767px) {
+  .section-1 {
+    visibility: visible !important;
+    width: auto;
+  } 
+  .section-3 {
+    visibility: visible !important;
+    width: auto;
   }
+}
+
+
+@media (max-width: 767px) {
+  
   .section-2 {
     span:first-child {
       display: none;
+      
     }
     span:last-child {
       display: inline;

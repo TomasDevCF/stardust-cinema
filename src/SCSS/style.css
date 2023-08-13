@@ -177,21 +177,27 @@ header .section-3 .category-s a {
   height: 100%;
 }
 
+.vs-hi {
+  visibility: hidden;
+  width: 1px;
+}
+
 @media (max-width: 941px) {
   .section-2 input {
     width: 200px !important;
   }
 }
+@media (min-width: 767px) {
+  .section-1 {
+    visibility: visible !important;
+    width: auto;
+  }
+  .section-3 {
+    visibility: visible !important;
+    width: auto;
+  }
+}
 @media (max-width: 767px) {
-  #root header {
-    justify-content: space-between !important;
-  }
-  #root header .section-1 {
-    display: block !important;
-  }
-  #root header .section-3 {
-    display: block !important;
-  }
   .section-2 span:first-child {
     display: none;
   }

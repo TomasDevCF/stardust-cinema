@@ -8,7 +8,8 @@ export default function Favorites() {
   const maxPage = favoriteList.length / 18 + 1;
   const [page, setPage] = useState(1);
 
-  function changePage(typpe, num) {
+  function changePage(e, typpe, num) {
+    e.preventDefault();
     if (typpe === "sum") {
       if (!(page + num > maxPage)) {
         setPage(page + num);
@@ -29,7 +30,10 @@ export default function Favorites() {
         {favoriteList.length == 0 ? (
           <div className="w-100 vh-70 d-flex justify-content-center text-center align-items-center">
             <h5 className="w-75 ">
-              <span className="d-block">Para agregar una película a tus favoritos debes presionar el corazón</span>{" "}
+              <span className="d-block">
+                Para agregar una película a tus favoritos debes presionar el
+                corazón
+              </span>{" "}
             </h5>
           </div>
         ) : (
@@ -56,8 +60,8 @@ export default function Favorites() {
           <nav>
             <ul className="pagination justify-content-end me-5">
               <li
-                onClick={() => {
-                  changePage("res", 1);
+                onClick={(e) => {
+                  changePage(e, "res", 1);
                 }}
                 className={`page-item ${page - 1 !== 0 ? "" : "disabled"}`}
               >
@@ -69,7 +73,7 @@ export default function Favorites() {
               {maxPage > page + 1 && (
                 <li
                   onClick={() => {
-                    changePage("sum", 1);
+                    changePage(e, "sum", 1);
                   }}
                   className="page-item"
                 >
@@ -82,7 +86,7 @@ export default function Favorites() {
               {maxPage > page + 2 && (
                 <li
                   onClick={() => {
-                    changePage("sum", 2);
+                    changePage(e, "sum", 2);
                   }}
                   className="page-item"
                 >
@@ -95,7 +99,7 @@ export default function Favorites() {
               {maxPage > page + 3 && (
                 <li
                   onClick={() => {
-                    changePage("sum", 3);
+                    changePage(e, "sum", 3);
                   }}
                   className="page-item"
                 >
@@ -106,8 +110,8 @@ export default function Favorites() {
               )}
 
               <li
-                onClick={() => {
-                  changePage("sum", 1);
+                onClick={(e) => {
+                  changePage(e, "sum", 1);
                 }}
                 className={`page-item ${page + 1 >= maxPage ? "disabled" : ""}`}
               >

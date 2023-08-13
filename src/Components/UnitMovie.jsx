@@ -40,7 +40,7 @@ export default function UnitMovie() {
         </div>
         <div className="detail-movie position-relative row w-100 text-center text-lg-start">
           <div className="left-mid col-lg-5 col-12 p-0 text-start">
-        <Link to="/movies" className="ms-5 mt-4 btn btn-primary"><i className="fa-solid fa-angle-left"></i> Volver atras</Link>
+        <Link to="/movies" className="ms-5 mt-4 btn btn-primary"><i className="fa-solid fa-angle-left"></i> Regresar</Link>
 
             <img width={"80%"} className="mt-3" src={data.poster_path ? `https://image.tmdb.org/t/p/original/${data.poster_path}` : "https://fondosmil.com/fondo/32041.jpg"} alt={data.title} />
           </div>
@@ -59,7 +59,7 @@ export default function UnitMovie() {
                   <h4>{data.release_date}</h4>
                 </div>
                 <div className="data col-4">
-                  <p>Duracion:</p>
+                  <p>Duración:</p>
                   <h4>{data.runtime} Mins</h4>
                 </div>
               </div>

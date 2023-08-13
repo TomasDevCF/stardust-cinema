@@ -10,7 +10,8 @@ export default function MoviesType() {
   const [page, setPage] = useState(1);
   const [maxPage, setMaxPage] = useState(100);
 
-  function changePage(typpe, num) {
+  function changePage(e, typpe, num) {
+    e.preventDefault();
     if (typpe === "sum") {
       if (!(page + num > maxPage)) {
         setPage(page + num);
@@ -57,7 +58,12 @@ export default function MoviesType() {
   return (
     <main className="px-3">
       <div className="title-mt position-relative d-flex align-items-center justify-content-center">
-        <Link to="/movies" className="text-start position-absolute left btn btn-primary"><i className="fa-solid fa-angle-left"></i> Volver atras</Link>
+        <Link
+          to="/movies"
+          className="text-start position-absolute left btn btn-primary"
+        >
+          <i className="fa-solid fa-angle-left"></i> Regresar
+        </Link>
         <h1 className="text-center">
           {type === "popular"
             ? "Populares"
@@ -91,8 +97,8 @@ export default function MoviesType() {
           <ul className="pagination justify-content-end me-5">
             <li className={`page-item ${page === 1 ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("res", 1);
+                onClick={(e) => {
+                  changePage(e, "res", 1);
                 }}
                 className="page-link"
                 href="#"
@@ -103,8 +109,8 @@ export default function MoviesType() {
 
             <li className={`page-item ${page + 1 > maxPage ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("sum", 1);
+                onClick={(e) => {
+                  changePage(e, "sum", 1);
                 }}
                 className="page-link"
                 href="#"
@@ -115,8 +121,8 @@ export default function MoviesType() {
 
             <li className={`page-item ${page + 2 > maxPage ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("sum", 2);
+                onClick={(e) => {
+                  changePage(e, "sum", 2);
                 }}
                 className="page-link"
                 href="#"
@@ -127,8 +133,8 @@ export default function MoviesType() {
 
             <li className={`page-item ${page + 3 > maxPage ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("sum", 3);
+                onClick={(e) => {
+                  changePage(e, "sum", 3);
                 }}
                 className="page-link"
                 href="#"
@@ -139,8 +145,8 @@ export default function MoviesType() {
 
             <li className={`page-item ${page + 1 > maxPage ? "disabled" : ""}`}>
               <a
-                onClick={() => {
-                  changePage("sum", 1);
+                onClick={(e) => {
+                  changePage(e, "sum", 1);
                 }}
                 className="page-link"
                 href="#"

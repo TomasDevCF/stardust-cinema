@@ -172,7 +172,7 @@ function App() {
               <h5>La magia del cine en tus manos.</h5>
             </div>
             <div className="down pt-3 w-100">
-              <h4>¡Busca tu película favorita!</h4>
+              <h4>¡Buscá tu película favorita!</h4>
               <span>
                 <i className="fa-solid fa-magnifying-glass"></i>
                 <input
