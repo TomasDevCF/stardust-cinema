@@ -57,10 +57,10 @@ export default function MoviesType() {
 
   return (
     <main className="px-3">
-      <div className="title-mt position-relative d-flex align-items-center justify-content-center">
+      <div className="title-mt position-relative d-flex align-items-center justify-content-center flex-column">
         <Link
           to="/movies"
-          className="text-start position-absolute left btn btn-primary"
+          className="text-start btn btn-primary me-auto"
         >
           <i className="fa-solid fa-angle-left"></i> Regresar
         </Link>

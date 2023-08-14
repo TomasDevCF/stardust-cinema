@@ -72,7 +72,7 @@ export default function Favorites() {
 
               {maxPage > page + 1 && (
                 <li
-                  onClick={() => {
+                  onClick={(e) => {
                     changePage(e, "sum", 1);
                   }}
                   className="page-item"
@@ -85,7 +85,7 @@ export default function Favorites() {
 
               {maxPage > page + 2 && (
                 <li
-                  onClick={() => {
+                  onClick={(e) => {
                     changePage(e, "sum", 2);
                   }}
                   className="page-item"
@@ -98,7 +98,7 @@ export default function Favorites() {
 
               {maxPage > page + 3 && (
                 <li
-                  onClick={() => {
+                  onClick={(e) => {
                     changePage(e, "sum", 3);
                   }}
                   className="page-item"
