@@ -86,7 +86,7 @@ export default function Search() {
         <h1 className="text-center">Resultado de tu búsqueda</h1>
       </div>
       <div className="movies mt">
-        <div className="row text-center m-0 mx-3 justify-content-evenly ">
+        <div className="row text-center m-0 justify-content-evenly w-100 mx-3">
           {data &&
             data.map((e) => {
               return (

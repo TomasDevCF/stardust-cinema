@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import queryString from "query-string"
 import { Link, useNavigate, useParams } from "react-router-dom";
 
 const options = {
@@ -7,16 +8,16 @@ const options = {
     accept: 'application/json',
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MTFmZWEzZDJiNjM1NDkwYjZmMDIyNjU5MjE4Y2JmOSIsInN1YiI6IjY0YzZjNGYxOTVjZTI0MDEwMTJmYTQ3YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LUn4EW9aJJ7WVXkEoCb3y8v34qWlrD7wkXvl6stkDQM'
   }
-};
-
+}
 
 export default function UnitMovie() {
-  const {mid} = useParams()
+  const {movie_id} = useParams()
   const [data, setData] = useState(null)
   const navigate = useNavigate()
+  const parsed = queryString.parse(location.hash)
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/${mid}?language=es`, options)
+    fetch(`https://api.themoviedb.org/3/movie/${movie_id}?language=es`, options)
     .then(response => response.json())
     .then(response => {
         if (response.success == false) {
@@ -26,7 +27,7 @@ export default function UnitMovie() {
       
     })
     .catch(err =>{
-      console.log("hello world");
+      console.error(err);
     });
   }, [])
 
@@ -40,8 +41,7 @@ export default function UnitMovie() {
         </div>
         <div className="detail-movie position-relative row w-100 text-center text-lg-start">
           <div className="left-mid col-lg-5 col-12 p-0 text-start">
-        <Link to="/movies" className="ms-5 mt-4 btn btn-primary"><i className="fa-solid fa-angle-left"></i> Regresar</Link>
-
+            <Link to={parsed ? parsed[Object.keys(parsed)[0]].slice(1, parsed.length) : "/movies"} className="ms-5 mt-4 btn btn-primary"><i className="fa-solid fa-angle-left"></i> Regresar</Link>
             <img width={"80%"} className="mt-3" src={data.poster_path ? `https://image.tmdb.org/t/p/original/${data.poster_path}` : "https://fondosmil.com/fondo/32041.jpg"} alt={data.title} />
           </div>
           <div className="right-mid col-lg-7 col-12 p-0 px-3">

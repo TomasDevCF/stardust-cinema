@@ -79,7 +79,7 @@ export default function Movie({
       } col-6 col-md-4 col-lg-2`}
     >
       <div
-        onClick={() => navigate(`/movie/${movie.id}`)}
+        onClick={() => navigate(`/movie/${movie.id}?lastpage=${location.hash}`)}
         className="of w-100 h-100 overflow-hidden"
       >
         <div>

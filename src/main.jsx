@@ -38,7 +38,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/movie" element={<Navigate to={"/"} />} />
-          <Route path="/movie/:mid" element={<UnitMovie />} />
+          <Route path="/movie/:movie_id" element={<UnitMovie />} />
           <Route path="/movies" element={<List />} />
           <Route path="/category" element={<Navigate to={"/"} />} />
           <Route path="/category?/:id" element={<Category />} />
@@ -48,6 +48,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </Routes>
 
         <Footer />
+        
       </HashRouter>
     </ContextProvider>
   </>
